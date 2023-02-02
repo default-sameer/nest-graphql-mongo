@@ -13,7 +13,7 @@ export class GraphqlAuthGuard extends AuthGuard('local') {
 
   handleRequest(err: any, user: any) {
     if (err || !user) {
-      throw err || new AuthenticationError('Could not authenticate');
+      throw err || new AuthenticationError('Could not authenticate ..........');
     }
 
     return user;

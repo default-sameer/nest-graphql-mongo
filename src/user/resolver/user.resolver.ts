@@ -6,9 +6,11 @@ import { Schema as MongooseSchema } from 'mongoose';
 import { UserNotFoundException } from '../exception/UserNotFound.exception';
 import { UseGuards } from '@nestjs/common';
 import { GraphqlAuthGuard } from 'src/auth/guard/auth.guard';
+import { AuthGuard } from '@nestjs/passport';
 
 @Resolver(() => User)
 @UseGuards(new GraphqlAuthGuard('local'))
+// @UseGuards(AuthGuard('local'))
 // @UseGuards(GraphqlAuthGuard)
 export class UserResolver {
   constructor(private userService: UserService) {}
